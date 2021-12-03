@@ -39,7 +39,7 @@ class App extends Component {
       <main>
         <NavBar />
         {!this.state.showDetails && <Movies movies={this.state.movies} displayDetails={this.displayDetails}/>}
-        {this.state.showDetails && <MovieDetails />}
+        {this.state.showDetails && <MovieDetails details={this.state.movieDetails["movie"]}/>}
       </main>
     )
   }

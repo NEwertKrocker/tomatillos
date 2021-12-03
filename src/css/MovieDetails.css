@@ -1,0 +1,28 @@
+.movie-details {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 5%
+}
+
+.details-poster {
+  height: 60vh;
+  width: auto;
+  padding: 5%;
+}
+
+.details-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-button {
+  align-items: center;
+  font-size: 24px;
+  font-family: sans-serif;
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  padding: 8px, 12px;
+}
