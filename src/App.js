@@ -9,7 +9,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: movieData,
+      movies: {
+        movies: []
+      },
       showDetails: false,
       movieDetails: {
         "movie": {
@@ -38,12 +40,22 @@ class App extends Component {
     this.setState({ showDetails: false })
   }
 
+  componentDidMount = () => {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data, "<<<<<<data")
+        this.setState({ movies: data })
+        console.log(this.state.movies, "<<<<movies in state")
+      })
+  }
+
   render() {
     return (
       <main>
         <NavBar />
         {!this.state.showDetails && <Movies movies={this.state.movies} displayDetails={this.displayDetails}/>}
-        {this.state.showDetails && <MovieDetails details={this.state.movieDetails["movie"]} hideDetails={this.hideDetails}/>}
+        // {this.state.showDetails && <MovieDetails details={this.state.movieDetails["movie"]} hideDetails={this.hideDetails}/>}
       </main>
     )
   }

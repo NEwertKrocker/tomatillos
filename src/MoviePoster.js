@@ -2,7 +2,6 @@ import React from 'react';
 import './css/MoviePoster.css'
 
 const MoviePoster = (props) => {
-  console.log(props, "<<<<<<props")
   const rating = Math.floor(props.rating * 10) / 10;
   return (
     <article className='movie-poster' onClick={props.displayDetails}>

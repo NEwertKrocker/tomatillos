@@ -3,7 +3,7 @@ import MoviePoster from './MoviePoster';
 import './css/Movies.css'
 
 const Movies = ({ movies, displayDetails }) => {
-  // console.log(movies.movies);
+
   const moviePosters = movies.movies.map(movie => {
     // console.log("<in Movie Posters>>", movie)
     return (
