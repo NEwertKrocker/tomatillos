@@ -1,0 +1,12 @@
+form {
+  font-size: 18px;
+  font-family: sans-serif;
+  padding: 10px;
+  display: flex;
+  align-content: center;
+  width: 20%;
+}
+
+input {
+  width: 100%;
+}

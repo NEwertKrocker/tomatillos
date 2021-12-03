@@ -1,6 +1,16 @@
 .movie-poster {
-  width: 500px;
+  width: auto;
   height: 60vh;
+}
+
+h2 {
+  font-size: 18px;
+  padding: 10px;
+}
+
+p {
+  font-weight: bold;
+  font-size: 18px;
 }
 
 img {

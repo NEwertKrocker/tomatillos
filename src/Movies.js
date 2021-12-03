@@ -2,12 +2,12 @@ import React from 'react';
 import MoviePoster from './MoviePoster';
 import './css/Movies.css'
 
-const Movies = ({ movies }) => {
+const Movies = ({ movies, displayDetails }) => {
   // console.log(movies.movies);
   const moviePosters = movies.movies.map(movie => {
     // console.log("<in Movie Posters>>", movie)
     return (
-      <MoviePoster 
+      <MoviePoster
         // movie={movie}
         id={movie.id}
         posterPath={movie['poster_path']}
@@ -16,12 +16,13 @@ const Movies = ({ movies }) => {
         rating={movie['average_rating']}
         releaseDate={movie['release_date']}
         key={movie.id}
+        displayDetails={displayDetails}
       />
     )
   });
 
   return (
-    <section className='poster-container'>
+    <section className='movies-container'>
       {moviePosters}
     </section>
   )
