@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import movieData from './movieData';
-// import Form from './Form'
+import Form from './Form'
 import Movies from './Movies'
 import './css/App.css'
 
@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <main>
         <h1>Tomatillos</h1>
-        {/* <Form /> */}
+        <Form />
         <section className='movie-container'>
           <Movies movies={this.state.movies}/>
         </section>
