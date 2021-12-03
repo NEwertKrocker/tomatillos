@@ -17,7 +17,7 @@ const details = props.details;
         </div>
         <img className="details-poster" src={details.poster_path} />
       </article>
-      <button className="back-button">Go Back</button>
+      <button className="back-button" onClick={props.hideDetails}>Go Back</button>
     </div>
   )
 }

@@ -34,12 +34,16 @@ class App extends Component {
     this.setState({ showDetails: true })
   }
 
+  hideDetails = () => {
+    this.setState({ showDetails: false })
+  }
+
   render() {
     return (
       <main>
         <NavBar />
         {!this.state.showDetails && <Movies movies={this.state.movies} displayDetails={this.displayDetails}/>}
-        {this.state.showDetails && <MovieDetails details={this.state.movieDetails["movie"]}/>}
+        {this.state.showDetails && <MovieDetails details={this.state.movieDetails["movie"]} hideDetails={this.hideDetails}/>}
       </main>
     )
   }
