@@ -30,14 +30,15 @@ class App extends Component {
   }
 
   displayDetails(id) {
-
+    this.setState({ showDetails: true })
   }
 
   render() {
     return (
       <main>
         <NavBar />
-        <Movies movies={this.state.movies}/>
+        {!this.state.showDetails && <Movies movies={this.state.movies} displayDetails={this.displayDetails}/>}
+        {this.state.showDetails && <MovieDetails />}
       </main>
     )
   }

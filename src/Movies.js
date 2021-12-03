@@ -2,7 +2,7 @@ import React from 'react';
 import MoviePoster from './MoviePoster';
 import './css/Movies.css'
 
-const Movies = ({ movies }) => {
+const Movies = ({ movies, displayDetails }) => {
   // console.log(movies.movies);
   const moviePosters = movies.movies.map(movie => {
     // console.log("<in Movie Posters>>", movie)
@@ -16,6 +16,7 @@ const Movies = ({ movies }) => {
         rating={movie['average_rating']}
         releaseDate={movie['release_date']}
         key={movie.id}
+        displayDetails={displayDetails}
       />
     )
   });
