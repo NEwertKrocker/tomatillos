@@ -10,16 +10,14 @@ class App extends Component {
     this.state = {
       movies: movieData
     }
-    
+
   }
 
   render() {
     return (
       <main>
         <NavBar />
-        <section className='movie-container'>
-          <Movies movies={this.state.movies}/>
-        </section>
+        <Movies movies={this.state.movies}/>
       </main>
     )
   }

@@ -7,7 +7,7 @@ const Movies = ({ movies }) => {
   const moviePosters = movies.movies.map(movie => {
     // console.log("<in Movie Posters>>", movie)
     return (
-      <MoviePoster 
+      <MoviePoster
         // movie={movie}
         id={movie.id}
         posterPath={movie['poster_path']}
@@ -21,7 +21,7 @@ const Movies = ({ movies }) => {
   });
 
   return (
-    <section className='poster-container'>
+    <section className='movies-container'>
       {moviePosters}
     </section>
   )
