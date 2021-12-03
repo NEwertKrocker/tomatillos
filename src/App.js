@@ -18,7 +18,9 @@ class App extends Component {
       <main>
         <h1>Tomatillos</h1>
         {/* <Form /> */}
-        <Movies movies={this.state.movies}/>
+        <section className='movie-container'>
+          <Movies movies={this.state.movies}/>
+        </section>
       </main>
     )
   }
