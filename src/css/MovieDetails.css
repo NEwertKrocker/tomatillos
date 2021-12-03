@@ -2,7 +2,8 @@
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 5%
+  padding: 5%;
+  padding-bottom: 0;
 }
 
 .details-poster {
@@ -15,6 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: inherit;
 }
 
 .back-button {
@@ -25,4 +27,5 @@
   background-color: red;
   border-radius: 5px;
   padding: 8px, 12px;
+  margin-bottom: 5vh;
 }
