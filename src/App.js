@@ -9,7 +9,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: movieData,
+      movies: {
+        movies: []
+      },
       showDetails: false,
       movieDetails: {
         "movie": {
@@ -30,12 +32,25 @@ class App extends Component {
     }
   }
 
-  displayDetails = () => {
+  displayDetails = (event, id) => {
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ movieDetails: data })
+      })
     this.setState({ showDetails: true })
   }
 
   hideDetails = () => {
     this.setState({ showDetails: false })
+  }
+
+  componentDidMount = () => {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ movies: data })
+      })
   }
 
   render() {
