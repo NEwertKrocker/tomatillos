@@ -2,9 +2,7 @@ import React from 'react';
 import './css/MovieDetails.css'
 
 const MovieDetails = (props) => {
-console.log(props, "<<<<<<<props")
-
-const details = props.details;
+  const details = props.details;
 
   return (
     <div className="details-wrapper">
@@ -15,7 +13,7 @@ const details = props.details;
           <p> {details.tagline} </p>
           <p> {details.overview} </p>
         </div>
-        <img className="details-poster" src={details.poster_path} />
+        <img className="details-poster" src={details.poster_path} alt={details.title}/>
       </article>
       <button className="back-button" onClick={props.hideDetails}>Go Back</button>
     </div>
