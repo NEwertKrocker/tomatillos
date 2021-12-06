@@ -16,4 +16,12 @@ describe('Default movie grid view', () => {
       .click();
     cy.get('.details-poster');
   })
+  it('should be able to click the "go back" button', () => {
+    cy.get('.movie-poster')
+      .last()
+      .click();
+    cy.get('.details-poster');
+    cy.get('.back-button')
+      .click();
+  })
 })
