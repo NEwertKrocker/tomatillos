@@ -7,4 +7,7 @@ describe('Default movie grid view', () => {
     cy.get('header').contains('Rancid Tomatillos');
     cy.get('input');
   })
+  it('should display an array of movie posters', () => {
+    cy.get('.movie-poster').should('have.length', 40)
+  })
 })
