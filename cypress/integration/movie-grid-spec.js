@@ -23,5 +23,6 @@ describe('Default movie grid view', () => {
     cy.get('.details-poster');
     cy.get('.back-button')
       .click();
+    cy.get('.movie-poster').should('have.length', 40);
   })
 })
