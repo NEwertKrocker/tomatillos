@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import movieData from './movieData';
+// import movieData from './movieData';
 import Movies from './Movies'
 import MovieDetails from './MovieDetails';
 import './css/App.css'
 import NavBar from './NavBar';
+import { getAllMovies, getSingleMovie} from './apiCalls'
 
 class App extends Component {
   constructor() {
@@ -13,6 +14,7 @@ class App extends Component {
         movies: []
       },
       showDetails: false,
+      error: '',
       movieDetails: {
         "movie": {
           id: 1,
@@ -33,11 +35,11 @@ class App extends Component {
   }
 
   displayDetails = (event, id) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(response => response.json())
+    getSingleMovie(id)
       .then(data => {
         this.setState({ movieDetails: data })
       })
+      .catch(err => this.setState({ error: 'There was a problem loading your movie. Try again later' }));
     this.setState({ showDetails: true })
   }
 
@@ -46,17 +48,21 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => response.json())
+    getAllMovies()
       .then(data => {
         this.setState({ movies: data })
       })
+      .catch(err => {
+        console.log(err)
+        this.setState({ error: 'Something went wrong, please try at a later time.' })
+      });
   }
 
   render() {
     return (
       <main>
         <NavBar />
+        {this.state.error && <h2>{this.state.error}</h2>}
         {!this.state.showDetails && <Movies movies={this.state.movies} displayDetails={this.displayDetails}/>}
         {this.state.showDetails && <MovieDetails details={this.state.movieDetails["movie"]} hideDetails={this.hideDetails}/>}
       </main>

@@ -1,11 +1,17 @@
 .nav-bar {
   background-color: red;
+  color: #141313;
   display: flex;
+  height: 15vh;
   justify-content: space-between;
+  margin-bottom: 5%;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 95px;
+  font-weight: bolder;
+  display: flex;
   font-family: sans-serif;
   padding: 10px;
+  align-items: center;
 }

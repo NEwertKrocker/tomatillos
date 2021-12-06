@@ -1,6 +1,13 @@
 .movie-poster {
   width: auto;
   height: 60vh;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  margin-bottom: 50px;
+}
+
+.movie-poster:hover {
+  transform: scale(1.1);
 }
 
 h2 {
