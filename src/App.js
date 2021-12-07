@@ -76,8 +76,6 @@ class App extends Component {
           <Route path=":movie_id" element={<MovieDetails details={this.state.movieDetails["movie"]} hideDetails={this.hideDetails} movieVideos={this.state.movieVideos}/>}/>
         </Routes>
         {this.state.error && <h2>{this.state.error}</h2>}
-        // {!this.state.showDetails && <Movies movies={this.state.movies} displayDetails={this.displayDetails} />}
-        // {this.state.showDetails && <MovieDetails details={this.state.movieDetails["movie"]} hideDetails={this.hideDetails} movieVideos={this.state.movieVideos}/>}
       </main>
     )
   }
