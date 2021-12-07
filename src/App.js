@@ -4,7 +4,7 @@ import Movies from './Movies'
 import MovieDetails from './MovieDetails';
 import './css/App.css'
 import NavBar from './NavBar';
-import { getAllMovies, getSingleMovie} from './apiCalls'
+import { getAllMovies, getSingleMovie, getMovieVideos } from './apiCalls';
 
 class App extends Component {
   constructor() {
@@ -30,7 +30,8 @@ class App extends Component {
           runtime:139,
           tagline: "It's a movie!"
         }
-      }
+      },
+      movieVideos: []
     }
   }
 
@@ -41,11 +42,27 @@ class App extends Component {
       })
       .catch(err => this.setState({ error: 'There was a problem loading your movie. Try again later' }));
     this.setState({ showDetails: true })
+
+    getMovieVideos(id)
+    .then(data => {
+      console.log('movieVideo>>>>>>', data.videos);
+      this.setState({ movieVideos: data.videos })
+    })
+    .catch(err => this.setState({ error: 'There was a problem loading your movie. Try again later' }));
   }
 
   hideDetails = () => {
     this.setState({ showDetails: false })
   }
+
+  // getMovieVideos = (id) => {
+  //     getMovieVideo(id)
+  //     .then(data => {
+  //       console.log('movieVideo>>>>>>', data.videos);
+  //       this.setState({ movieVideos: data.videos })
+  //     })
+  //     .catch(err => this.setState({ error: 'There was a problem loading your movie. Try again later' }));
+  // }
 
   componentDidMount = () => {
     getAllMovies()
@@ -63,8 +80,8 @@ class App extends Component {
       <main>
         <NavBar />
         {this.state.error && <h2>{this.state.error}</h2>}
-        {!this.state.showDetails && <Movies movies={this.state.movies} displayDetails={this.displayDetails}/>}
-        {this.state.showDetails && <MovieDetails details={this.state.movieDetails["movie"]} hideDetails={this.hideDetails}/>}
+        {!this.state.showDetails && <Movies movies={this.state.movies} displayDetails={this.displayDetails} />}
+        {this.state.showDetails && <MovieDetails details={this.state.movieDetails["movie"]} hideDetails={this.hideDetails} movieVideos={this.state.movieVideos}/>}
       </main>
     )
   }
