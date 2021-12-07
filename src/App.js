@@ -55,15 +55,6 @@ class App extends Component {
     this.setState({ showDetails: false })
   }
 
-  // getMovieVideos = (id) => {
-  //     getMovieVideo(id)
-  //     .then(data => {
-  //       console.log('movieVideo>>>>>>', data.videos);
-  //       this.setState({ movieVideos: data.videos })
-  //     })
-  //     .catch(err => this.setState({ error: 'There was a problem loading your movie. Try again later' }));
-  // }
-
   componentDidMount = () => {
     getAllMovies()
       .then(data => {
