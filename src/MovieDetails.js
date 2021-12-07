@@ -26,12 +26,11 @@ const MovieDetails = (props) => {
       <article className="movie-details-container">
         <section className='movie-details'>
           <div className='basic-info'>
-            <h2 className='movie-title'> {details.title} </h2>
-            <p className='stats'> {yearRelease} </p>
-            <p className='stats'> {`⭐️ ${rating}`} </p>
+            <h2 className='movie-title'> {details.title.toUpperCase()} </h2>
+            <p className='stats'> {`(${yearRelease}) ${rating} ⭐️`} </p>
           </div>
-          <p> {details.tagline} </p>
-          <p> {details.overview} </p>
+          <p className='movie-tagline'> {details.tagline} </p>
+          <p className='movie-summary'> {details.overview} </p>
         </section>
         { props.movieVideos.length && <iframe
           title={`${props.details.title}Trailer Video Player`}
