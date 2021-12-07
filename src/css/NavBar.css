@@ -7,6 +7,12 @@
   /* margin-bottom: 5%; */
 }
 
+.nav-bar::before {
+  position: absolute;
+  opacity: .4;
+  background-image: url('../assets/tomatoes.jpeg');
+}
+
 h1 {
   font-size: 95px;
   font-weight: bolder;
