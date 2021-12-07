@@ -5,6 +5,7 @@ import MovieDetails from './MovieDetails';
 import './css/App.css'
 import NavBar from './NavBar';
 import { getAllMovies, getSingleMovie, getMovieVideos } from './apiCalls';
+import { Route, Routes } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -55,15 +56,6 @@ class App extends Component {
     this.setState({ showDetails: false })
   }
 
-  // getMovieVideos = (id) => {
-  //     getMovieVideo(id)
-  //     .then(data => {
-  //       console.log('movieVideo>>>>>>', data.videos);
-  //       this.setState({ movieVideos: data.videos })
-  //     })
-  //     .catch(err => this.setState({ error: 'There was a problem loading your movie. Try again later' }));
-  // }
-
   componentDidMount = () => {
     getAllMovies()
       .then(data => {
@@ -79,9 +71,13 @@ class App extends Component {
     return (
       <main>
         <NavBar />
+        <Routes>
+          <Route path="/" element={<Movies movies={this.state.movies} displayDetails={this.displayDetails}/>}/>
+          <Route path=":movie_id" element={<MovieDetails details={this.state.movieDetails["movie"]} hideDetails={this.hideDetails} movieVideos={this.state.movieVideos}/>}/>
+        </Routes>
         {this.state.error && <h2>{this.state.error}</h2>}
-        {!this.state.showDetails && <Movies movies={this.state.movies} displayDetails={this.displayDetails} />}
-        {this.state.showDetails && <MovieDetails details={this.state.movieDetails["movie"]} hideDetails={this.hideDetails} movieVideos={this.state.movieVideos}/>}
+        // {!this.state.showDetails && <Movies movies={this.state.movies} displayDetails={this.displayDetails} />}
+        // {this.state.showDetails && <MovieDetails details={this.state.movieDetails["movie"]} hideDetails={this.hideDetails} movieVideos={this.state.movieVideos}/>}
       </main>
     )
   }
