@@ -37,7 +37,7 @@ const MovieDetails = (props) => {
         </section>
         { props.movieVideos.length && <iframe
           title={`${props.details.title}Trailer Video Player`}
-          src={`https://www.youtube.com/embed/${movieTrailer.key}?autoplay=1`}
+          src={`https://www.youtube.com/embed/${movieTrailer.key}?autoplay=0`}
           frameBorder=''
           allow='autoplay; encrypted-media'
           allowFullScreen
