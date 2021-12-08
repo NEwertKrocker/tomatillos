@@ -1,12 +1,16 @@
 import React from 'react';
 import MoviePoster from './MoviePoster';
 import './css/Movies.css'
+import { Link, useParams } from 'react-router-dom';
 
 const Movies = ({ movies, displayDetails }) => {
+
+console.log(useParams())
 
   const moviePosters = movies.movies.map(movie => {
     // console.log("<in Movie Posters>>", movie)
     return (
+      <Link to={`${movie.id}`}>
       <MoviePoster
         // movie={movie}
         id={movie.id}
@@ -18,6 +22,7 @@ const Movies = ({ movies, displayDetails }) => {
         key={movie.id}
         displayDetails={displayDetails}
       />
+      </Link>
     )
   });
 

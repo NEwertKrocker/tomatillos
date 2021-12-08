@@ -1,6 +1,8 @@
 import React from 'react';
 import './css/MovieDetails.css'
 import backIcon from './assets/back-arrow.svg'
+import { Link } from 'react-router-dom';
+import Movies from './Movies'
 
 const MovieDetails = (props) => {
   const movieTrailer = props.movieVideos.find(video => video.type.includes('Trailer'))
@@ -20,9 +22,9 @@ const MovieDetails = (props) => {
 
   return (
     <section className="details-wrapper" style={backgroundStyle}>
-      <div className='back-arrow-container' onClick={props.hideDetails}>
+      <Link to="/" className='back-arrow-container'>
         <img className="back-arrow-image"src={backIcon} alt='back to home'/>
-      </div>
+      </Link>
       <article className="movie-details-container">
         <section className='movie-details'>
           <div className='basic-info'>
