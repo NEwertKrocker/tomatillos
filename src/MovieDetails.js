@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './css/MovieDetails.css';
-import { getSingleMovie, getMovieVideos } from './apiCalls';
+import { getSingleMovie } from './apiCalls';
 import backIcon from './assets/back-arrow.svg'
 import { Link } from 'react-router-dom';
+import MovieTrailer from './MovieTrailer'
 // import Movies from './Movies'
 
 class MovieDetails extends Component {
@@ -17,8 +18,8 @@ class MovieDetails extends Component {
     getSingleMovie(this.props.id)
       .then(data => {
         this.setState({ movieDetails: data.movie})
-      })
-    }
+    })
+  }
 
   getRating(movie) {
     return Math.floor(movie.average_rating * 10) / 10;
@@ -57,7 +58,7 @@ class MovieDetails extends Component {
             <p> {movie.tagline} </p>
             <p> {movie.overview} </p>
           </section>
-          
+          <MovieTrailer id={this.props.id}/>
         </article>
       </section>
     )
