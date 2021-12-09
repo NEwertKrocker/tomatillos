@@ -3,7 +3,7 @@ import Movies from './Movies'
 import './css/App.css'
 import NavBar from './NavBar';
 import SelectedMovie from './SelectedMovie'
-import { getAllMovies, getSingleMovie, getMovieVideos } from './apiCalls';
+import { getAllMovies } from './apiCalls';
 import { Route, Routes } from 'react-router-dom';
 
 class App extends Component {
