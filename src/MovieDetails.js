@@ -1,53 +1,68 @@
-import React from 'react';
-import './css/MovieDetails.css'
+import React, { Component } from 'react';
+import './css/MovieDetails.css';
+import { getSingleMovie } from './apiCalls';
 import backIcon from './assets/back-arrow.svg'
 import { Link } from 'react-router-dom';
-import Movies from './Movies'
+import MovieTrailer from './MovieTrailer'
+// import Movies from './Movies'
 
-const MovieDetails = (props) => {
-  const movieTrailer = props.movieVideos.find(video => video.type.includes('Trailer'))
-  const details = props.details;
-  const rating = Math.floor(details.average_rating * 10) / 10;
-  const yearRelease = new Date(details.release_date).getFullYear()
-  const backgroundStyle = {
-    backgroundImage:
-    `linear-gradient(to right, #1C1D1E, 50%, transparent),
-     url(${props.details['backdrop_path']})`,
-     backgroundRepeat: 'no-repeat',
-     width: '100%',
-     height: '100%',
-     backgroundPosition: 'center',
-     backgroundSize: 'cover'
+class MovieDetails extends Component {
+  constructor() {
+    super();
+    this.state = {
+      movieDetails: {}
+    }
+  }
+  
+  componentDidMount() {
+    getSingleMovie(this.props.id)
+      .then(data => {
+        this.setState({ movieDetails: data.movie})
+    })
   }
 
-  return (
-    <section className="details-wrapper" style={backgroundStyle}>
-      <Link to="/" className='back-arrow-container'>
-        <img className="back-arrow-image"src={backIcon} alt='back to home'/>
-      </Link>
-      <article className="movie-details-container">
-        <section className='movie-details'>
-          <div className='basic-info'>
-            <h2 className='movie-title'> {details.title} </h2>
-            <p className='stats'> {yearRelease} </p>
-            <p className='stats'> {`⭐️ ${rating}`} </p>
-          </div>
-          <p> {details.tagline} </p>
-          <p> {details.overview} </p>
-        </section>
-        { props.movieVideos.length && <iframe
-          title={`${props.details.title}Trailer Video Player`}
-          src={`https://www.youtube.com/embed/${movieTrailer.key}?autoplay=0`}
-          frameBorder=''
-          allow='autoplay; encrypted-media'
-          allowFullScreen
-          width={960}
-          height={544}
-          objectFit= 'cover'
-        ></iframe> }
-      </article>
-    </section>
-  )
+  getRating(movie) {
+    return Math.floor(movie.average_rating * 10) / 10;
+  }
+
+  getReleaseYear(movie) {
+    return new Date(movie.release_date).getFullYear()
+  }
+
+  render() {
+    // const movieTrailer = props.movieVideos.find(video => video.type.includes('Trailer'))
+    const movie = this.state.movieDetails;
+    const backgroundStyle = {
+        backgroundImage:
+        `linear-gradient(to right, #1C1D1E, 50%, transparent),
+         url(${movie['backdrop_path']})`,
+         backgroundRepeat: 'no-repeat',
+         width: '100%',
+         height: '100%',
+         backgroundPosition: 'center',
+         backgroundSize: 'cover'
+      }
+
+    return (
+      <section className="details-wrapper" style={backgroundStyle}>
+        <Link to="/" className='back-arrow-container'>
+          <img className="back-arrow-image"src={backIcon} alt='back to home'/>
+        </Link>
+        <article className="movie-details-container">
+          <section className='movie-details'>
+            <div className='basic-info'>
+              <h2 className='movie-title'> {movie.title} </h2>
+              <p className='stats'> {this.getReleaseYear(movie)} </p>
+              <p className='stats'> {`⭐️ ${this.getRating(movie)}`} </p>
+            </div>
+            <p> {movie.tagline} </p>
+            <p> {movie.overview} </p>
+          </section>
+          <MovieTrailer id={this.props.id}/>
+        </article>
+      </section>
+    )
+  }
 }
 
 export default MovieDetails;
