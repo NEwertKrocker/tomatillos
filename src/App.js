@@ -26,10 +26,17 @@ class App extends Component {
       });
   }
 
+  searchMovies = inputValue => {
+    const filteredMovies = this.state.movies.filter(movie => {
+      return movie.title.toLowerCase().includes(inputValue.toLowerCase());
+    })
+    this.setState({ movies: filteredMovies})
+  }
+
   render() {
     return (
       <main>
-        <NavBar />
+        <NavBar searchMovies={this.searchMovies}/>
         <Routes>
           <Route path="/" element={<Movies movies={this.state.movies} />}/>
           <Route path=":movie_id" element={<SelectedMovie />}/>
