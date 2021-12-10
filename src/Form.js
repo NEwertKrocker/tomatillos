@@ -9,10 +9,21 @@ class Form extends Component {
     }
   }
 
+  handleChange = event => {
+    this.setState({ searchBarValue: event.target.value });
+    this.props.searchMovies(this.state.searchBarValue);
+  }
+
   render() {
     return (
       <form>
-        <input type='text' placeholder='Search Movie...'/>
+        <input 
+          type='text'
+          name='searcBarValue'
+          placeholder='Search Movie...'
+          value={this.state.searchBarValue}
+          onChange={event => this.handleChange(event)}
+        />
       </form>
     )
   }
