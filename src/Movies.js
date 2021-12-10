@@ -3,9 +3,9 @@ import MoviePoster from './MoviePoster';
 import './css/Movies.css'
 import { Link } from 'react-router-dom';
 
-const Movies = ({ movies, getDetails }) => {
+const Movies = ({ movies }) => {
 
-  const moviePosters = movies.movies.map(movie => {
+  const moviePosters = movies.map(movie => {
     return (
       <Link to={`${movie.id}`} key={movie.id}>
         <MoviePoster
@@ -19,6 +19,8 @@ const Movies = ({ movies, getDetails }) => {
         />
       </Link>
     )
+
+    
   });
 
   return (

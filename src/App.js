@@ -10,9 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: {
-        movies: []
-      },
+      movies: [],
       error: '',
     }
   }
@@ -20,7 +18,7 @@ class App extends Component {
   componentDidMount = () => {
     getAllMovies()
       .then(data => {
-        this.setState({ movies: data })
+        this.setState({ movies: data.movies })
       })
       .catch(err => {
         console.log(err)
