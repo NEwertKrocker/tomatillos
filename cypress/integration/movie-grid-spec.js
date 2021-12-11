@@ -2,6 +2,7 @@
 describe('Default movie grid view', () => {
   beforeEach(() => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies*', {
+      // add a status code
       body: {
         "movies": [
           {
@@ -69,6 +70,7 @@ describe('Default movie grid view', () => {
   it('should display a header and search bar', () => {
     cy.get('header').contains('Rancid Tomatillos');
     cy.get('input');
+    // add more testing for the input
   })
   it('should display an array of movie posters', () => {
     cy.get('.movie-poster').should('have.length', 3)

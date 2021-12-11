@@ -10,9 +10,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: {
-        movies: []
-      },
+      movies: [],
+      filteredMovies: [],
       error: '',
     }
   }
@@ -20,7 +19,7 @@ class App extends Component {
   componentDidMount = () => {
     getAllMovies()
       .then(data => {
-        this.setState({ movies: data })
+        this.setState({ movies: data.movies })
       })
       .catch(err => {
         console.log(err)
@@ -28,12 +27,20 @@ class App extends Component {
       });
   }
 
+  searchMovies = inputValue => {
+    const filteredMovies = this.state.movies.filter(movie => {
+      return movie.title.toLowerCase().includes(inputValue.toLowerCase());
+    });
+    
+    this.setState({ filteredMovies: filteredMovies }, )
+  }
+
   render() {
     return (
       <main>
-        <NavBar />
+        <NavBar searchMovies={this.searchMovies}/>
         <Routes>
-          <Route path="/" element={<Movies movies={this.state.movies} />}/>
+          <Route path="/" element={<Movies movies={this.state.movies} filteredMovies={this.state.filteredMovies}/>}/>
           <Route path=":movie_id" element={<SelectedMovie />}/>
         </Routes>
         {this.state.error && <h2>{this.state.error}</h2>}
