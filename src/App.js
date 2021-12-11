@@ -11,6 +11,7 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
+      filteredMovies: [],
       error: '',
     }
   }
@@ -29,8 +30,9 @@ class App extends Component {
   searchMovies = inputValue => {
     const filteredMovies = this.state.movies.filter(movie => {
       return movie.title.toLowerCase().includes(inputValue.toLowerCase());
-    })
-    this.setState({ movies: filteredMovies})
+    });
+    
+    this.setState({ filteredMovies: filteredMovies }, )
   }
 
   render() {
@@ -38,7 +40,7 @@ class App extends Component {
       <main>
         <NavBar searchMovies={this.searchMovies}/>
         <Routes>
-          <Route path="/" element={<Movies movies={this.state.movies} />}/>
+          <Route path="/" element={<Movies movies={this.state.movies} filteredMovies={this.state.filteredMovies}/>}/>
           <Route path=":movie_id" element={<SelectedMovie />}/>
         </Routes>
         {this.state.error && <h2>{this.state.error}</h2>}
