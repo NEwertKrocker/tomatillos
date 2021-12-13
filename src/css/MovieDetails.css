@@ -3,11 +3,11 @@
   display: flex;
   justify-content: space-between;
   padding: 5%;
-  padding-bottom: 0;
 }
 
 .movie-details {
   width: 50%;
+  opacity: .9;
 }
 
 .details-poster {
@@ -55,6 +55,7 @@
 .movie-title {
   font-size: 90px;
   font-weight: bold;
+  padding: 0;
 }
 
 .basic-info {
@@ -64,6 +65,11 @@
   width: 35vw;
 }
 
+.basic-info,
+.movie-title {
+  margin-bottom: 3%;
+}
+
 .stats {
   font-size: 70px;
   font-weight: initial;
@@ -71,4 +77,8 @@
 
 iframe:hover {
   cursor: pointer;
+}
+.movie-description {
+  font-size: 30px;
+  font-weight: initial;
 }

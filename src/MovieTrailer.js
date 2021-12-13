@@ -13,7 +13,6 @@ class MovieTrailer extends Component {
     getMovieVideos(this.props.id)
       .then(data => {
         const video = data.videos.find(video => video.type.includes('Trailer'));
-        console.log(video)
         this.setState({ movieVideo: video})
     })
   }

@@ -54,8 +54,8 @@ class MovieDetails extends Component {
               <p className='stats'> {`⭐️ ${this.getRating(movie)}`} </p>
               <p className='stats'>{`${movie.runtime} mins`}</p>
             </div>
-            <p> {movie.tagline} </p>
-            <p> {movie.overview} </p>
+            <p className='movie-description'> {movie.tagline} </p>
+            <p className='movie-description'> {movie.overview} </p>
           </section>
           <MovieTrailer id={this.props.id}/>
         </article>
