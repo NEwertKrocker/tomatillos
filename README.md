@@ -9,7 +9,8 @@
   - [Install + Setup](#install-+-set-up)
   - [Contributors](#contributors)
 - [Wins](#wins)
-- [Challenges + Improvements](#challenges-+-Improvements)
+- [Challenges](#challenges)
+- [Improvements](#improvements)
 - [Project Specs](#project-specs)
 
 ## Abstract
@@ -29,7 +30,7 @@ Rancid Tomatillos is a movie review application. The purpose of this project is 
 
 
 ## Code Architecture
-
+- JS/CSS/HTML
 
 ## Illustrations
 
@@ -45,7 +46,7 @@ Rancid Tomatillos is a movie review application. The purpose of this project is 
 ## Install + Setup
 - Run `git clone git@github.com:NEwertKrocker/tomatillos.git` in your terminal
 - `cd` into the root directory i=of this project
-- Run `npm intall` to install all dependencies
+- Run `npm install` to install all dependencies
 - Run `npm start`
 - Last command should open the browser automatically, if that's not the case open `http://localhost:3000` on your browser
 
@@ -56,8 +57,14 @@ Rancid Tomatillos is a movie review application. The purpose of this project is 
 ## Wins
 	- Utilizing new technologies such as React, React Router, and Cypress despite learning it in such a short amount of time.
 
-## Challenges + Improvements
+## Challenges
 	- Cypress proved to be challenging. We had to familiarize ourself with its syntax, assertion statements, and stubbing network requests.
+
+## Imporovements
+- Adding a feature that allows a user to favorite a movie.
+- Adding a button to toggle the view to favorited movies.
+- Allowing users to add their rating of a movie.
+- Adding a "404 page not found" page.
 
 ## Project Specs
   - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html).
