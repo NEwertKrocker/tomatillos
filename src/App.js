@@ -3,6 +3,7 @@ import Movies from './Movies'
 import './css/App.css'
 import NavBar from './NavBar';
 import SelectedMovie from './SelectedMovie'
+import Error from './Error'
 import { getAllMovies } from './apiCalls';
 import { Route, Routes } from 'react-router-dom';
 
@@ -31,7 +32,7 @@ class App extends Component {
     const filteredMovies = this.state.movies.filter(movie => {
       return movie.title.toLowerCase().includes(inputValue.toLowerCase());
     });
-    
+
     this.setState({ filteredMovies: filteredMovies }, )
   }
 
@@ -40,10 +41,10 @@ class App extends Component {
       <main>
         <NavBar searchMovies={this.searchMovies}/>
         <Routes>
-          <Route path="/" element={<Movies movies={this.state.movies} filteredMovies={this.state.filteredMovies}/>}/>
+          {!this.state.error && <Route path="/" element={<Movies movies={this.state.movies} filteredMovies={this.state.filteredMovies}/>}/>}
           <Route path=":movie_id" element={<SelectedMovie />}/>
         </Routes>
-        {this.state.error && <h2>{this.state.error}</h2>}
+        {this.state.error && <Error />}
       </main>
     )
   }

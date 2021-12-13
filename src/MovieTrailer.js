@@ -23,7 +23,7 @@ class MovieTrailer extends Component {
       <>
         <iframe
           title='Movie Trailer'
-          src={`https://www.youtube.com/embed/${this.state.movieVideo.key}?autoplay=1`}
+          src={`https://www.youtube.com/embed/${this.state.movieVideo.key}?autoplay=0`}
           frameBorder=''
           allow='autoplay; encrypted-media'
           allowFullScreen
