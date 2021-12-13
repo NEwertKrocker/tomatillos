@@ -4,7 +4,6 @@ import { getSingleMovie } from './apiCalls';
 import backIcon from './assets/back-arrow.svg'
 import { Link } from 'react-router-dom';
 import MovieTrailer from './MovieTrailer'
-// import Movies from './Movies'
 
 class MovieDetails extends Component {
   constructor() {
@@ -13,7 +12,7 @@ class MovieDetails extends Component {
       movieDetails: {}
     }
   }
-  
+
   componentDidMount() {
     getSingleMovie(this.props.id)
       .then(data => {
@@ -30,7 +29,6 @@ class MovieDetails extends Component {
   }
 
   render() {
-    // const movieTrailer = props.movieVideos.find(video => video.type.includes('Trailer'))
     const movie = this.state.movieDetails;
     const backgroundStyle = {
         backgroundImage:
