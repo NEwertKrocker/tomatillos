@@ -64,11 +64,13 @@
 .basic-info {
   display: flex;
   align-items: baseline;
-  /* justify-content: space-between; */
+  justify-content: space-between;
+  width: 35vw;
 }
 
 .stats {
   font-size: 70px;
+  font-weight: initial;
 }
 
 iframe:hover {
