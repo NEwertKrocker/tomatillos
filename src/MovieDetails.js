@@ -50,10 +50,11 @@ class MovieDetails extends Component {
         </Link>
         <article className="movie-details-container">
           <section className='movie-details'>
-            <div className='basic-info'>
               <h2 className='movie-title'> {movie.title} </h2>
+            <div className='basic-info'>
               <p className='stats'> {this.getReleaseYear(movie)} </p>
               <p className='stats'> {`⭐️ ${this.getRating(movie)}`} </p>
+              <p className='stats'>{`${movie.runtime} mins`}</p>
             </div>
             <p> {movie.tagline} </p>
             <p> {movie.overview} </p>
