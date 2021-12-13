@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/tomatillos/static/css/main.94c9b92d.chunk.css",
-    "main.js": "/tomatillos/static/js/main.43263825.chunk.js",
-    "main.js.map": "/tomatillos/static/js/main.43263825.chunk.js.map",
+    "main.js": "/tomatillos/static/js/main.bdfcd689.chunk.js",
+    "main.js.map": "/tomatillos/static/js/main.bdfcd689.chunk.js.map",
     "runtime-main.js": "/tomatillos/static/js/runtime-main.3a35e645.js",
     "runtime-main.js.map": "/tomatillos/static/js/runtime-main.3a35e645.js.map",
-    "static/js/2.22413389.chunk.js": "/tomatillos/static/js/2.22413389.chunk.js",
-    "static/js/2.22413389.chunk.js.map": "/tomatillos/static/js/2.22413389.chunk.js.map",
+    "static/js/2.0064b1e4.chunk.js": "/tomatillos/static/js/2.0064b1e4.chunk.js",
+    "static/js/2.0064b1e4.chunk.js.map": "/tomatillos/static/js/2.0064b1e4.chunk.js.map",
     "static/js/3.4b7dc902.chunk.js": "/tomatillos/static/js/3.4b7dc902.chunk.js",
     "static/js/3.4b7dc902.chunk.js.map": "/tomatillos/static/js/3.4b7dc902.chunk.js.map",
     "index.html": "/tomatillos/index.html",
     "static/css/main.94c9b92d.chunk.css.map": "/tomatillos/static/css/main.94c9b92d.chunk.css.map",
-    "static/js/2.22413389.chunk.js.LICENSE.txt": "/tomatillos/static/js/2.22413389.chunk.js.LICENSE.txt",
+    "static/js/2.0064b1e4.chunk.js.LICENSE.txt": "/tomatillos/static/js/2.0064b1e4.chunk.js.LICENSE.txt",
     "static/media/back-arrow.b23dca9a.svg": "/tomatillos/static/media/back-arrow.b23dca9a.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3a35e645.js",
-    "static/js/2.22413389.chunk.js",
+    "static/js/2.0064b1e4.chunk.js",
     "static/css/main.94c9b92d.chunk.css",
-    "static/js/main.43263825.chunk.js"
+    "static/js/main.bdfcd689.chunk.js"
   ]
 }
