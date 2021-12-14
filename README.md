@@ -2,11 +2,11 @@
 
 
 ## Table of Contents
-  - [Abstract](#bstract)
+  - [Abstract](#abstract)
   - [Technologies](#technologies)
   - [Code Architecture](#code-architecture)
   - [Illustrations](#illustrations)
-  - [Install + Setup](#install-+-set-up)
+  - [Install + Setup](#install-+-setup)
   - [Contributors](#contributors)
 - [Wins](#wins)
 - [Challenges](#challenges)
@@ -14,7 +14,7 @@
 - [Project Specs](#project-specs)
 
 ## Abstract
-Rancid Tomatillos is a movie review application. The purpose of this project is to allow users to view a list of movies, search for a specific movie, and view more information about said movie. When a user cliks on a movie poster, the user will see the year the movie was released, a rating, and overview, along with a trailer for the movie! The learning goals for this project included:
+Rancid Tomatillos is a movie review application. The purpose of this project is to allow users to view a list of movies, search for a specific movie, and view more information about said movie. When a user cliks on a movie poster, the user will see the year the movie was released, a rating, and overview, along with a trailer for the movie!. The learning goals for this project included:
   - Make Network request using RESTful APIs
   - Using React.js
   - Using React Router to create a multi-page UX
@@ -45,7 +45,7 @@ Rancid Tomatillos is a movie review application. The purpose of this project is 
 
 ## Install + Setup
 - Run `git clone git@github.com:NEwertKrocker/tomatillos.git` in your terminal
-- `cd` into the root directory i=of this project
+- `cd` into the root directory of this project
 - Run `npm install` to install all dependencies
 - Run `npm start`
 - Last command should open the browser automatically, if that's not the case open `http://localhost:3000` on your browser
@@ -60,7 +60,7 @@ Rancid Tomatillos is a movie review application. The purpose of this project is 
 ## Challenges
 	- Cypress proved to be challenging. We had to familiarize ourself with its syntax, assertion statements, and stubbing network requests.
 
-## Imporovements
+## Improvements
 - Adding a feature that allows a user to favorite a movie.
 - Adding a button to toggle the view to favorited movies.
 - Allowing users to add their rating of a movie.
