@@ -70,4 +70,34 @@ iframe:hover {
 .movie-description {
   font-size: 30px;
   font-weight: initial;
+  margin-bottom: 5%;
+}
+
+@media screen and (max-width: 1050px){
+  .movie-details-container {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+  iframe {
+    aspect-ratio: 16/9;
+    width: 95%;
+    display: block;
+  }
+  .movie-details,
+  .basic-info {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .stats {
+    font-size: 32px;
+  }
+  .movie-title {
+    font-size: 32px;
+  }
+  .movie-description {
+    font-size: 18px;
+  }
 }
