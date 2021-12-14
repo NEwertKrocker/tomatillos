@@ -6,7 +6,7 @@
   - [Technologies](#technologies)
   - [Code Architecture](#code-architecture)
   - [Illustrations](#illustrations)
-  - [Install + Setup](#install-+-set-up)
+  - [Install + Setup](#install-+-setup)
   - [Contributors](#contributors)
 - [Wins](#wins)
 - [Challenges](#challenges)
@@ -60,7 +60,7 @@ Rancid Tomatillos is a movie review application. The purpose of this project is 
 ## Challenges
 	- Cypress proved to be challenging. We had to familiarize ourself with its syntax, assertion statements, and stubbing network requests.
 
-## Imporovements
+## Improvements
 - Adding a feature that allows a user to favorite a movie.
 - Adding a button to toggle the view to favorited movies.
 - Allowing users to add their rating of a movie.
