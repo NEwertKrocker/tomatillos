@@ -6,15 +6,15 @@
   - [Technologies](#technologies)
   - [Code Architecture](#code-architecture)
   - [Illustrations](#illustrations)
-  - [Install + Setup](#install-+-setup)
+  - [Install + Setup](#install-+-set-up)
   - [Contributors](#contributors)
-- [Wins](#wins)
-- [Challenges](#challenges)
-- [Improvements](#improvements)
-- [Project Specs](#project-specs)
+  - [Wins](#wins)
+  - [Challenges](#challenges)
+  - [Improvements](#improvements)
+  - [Project Specs](#project-specs)
 
 ## Abstract
-Rancid Tomatillos is a movie review application. The purpose of this project is to allow users to view a list of movies, search for a specific movie, and view more information about said movie. When a user cliks on a movie poster, the user will see the year the movie was released, a rating, and overview, along with a trailer for the movie!. The learning goals for this project included:
+Rancid Tomatillos is a movie review application. The purpose of this project is to allow users to view a list of movies, search for a specific movie, and view more information about said movie. When a user cliks on a movie poster, the user will see the year the movie was released, a rating, and overview, along with a trailer for the movie! The learning goals for this project included:
   - Make Network request using RESTful APIs
   - Using React.js
   - Using React Router to create a multi-page UX
@@ -44,8 +44,13 @@ Rancid Tomatillos is a movie review application. The purpose of this project is 
 <img src="src/assets/movie-details.gif" alt="movie-details-page"/>
 
 ## Install + Setup
+
+[Visit the deployed site!](http://newertkrocker.github.io/tomatillos)
+
+To run locally:
+
 - Run `git clone git@github.com:NEwertKrocker/tomatillos.git` in your terminal
-- `cd` into the root directory of this project
+- `cd` into the root directory i=of this project
 - Run `npm install` to install all dependencies
 - Run `npm start`
 - Last command should open the browser automatically, if that's not the case open `http://localhost:3000` on your browser
