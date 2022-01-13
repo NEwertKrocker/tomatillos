@@ -14,7 +14,7 @@
 - [Project Specs](#project-specs)
 
 ## Abstract
-Rancid Tomatillos is a movie review application. The purpose of this project is to allow users to view a list of movies, search for a specific movie, and view more information about said movie. When a user cliks on a movie poster, the user will see the year the movie was released, a rating, and overview, along with a trailer for the movie!. The learning goals for this project included:
+Rancid Tomatillos is a movie review application. The purpose of this project is to allow users to view a list of movies, search for a specific movie, and view more information about said movie. When a user clicks on a movie poster, the user will see the year the movie was released, a rating, and overview, along with a trailer for the movie!. The learning goals for this project included:
   - Make Network request using RESTful APIs
   - Using React.js
   - Using React Router to create a multi-page UX
